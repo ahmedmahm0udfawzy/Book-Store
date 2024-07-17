@@ -1,0 +1,26 @@
+.navbar .nav_link {
+  text-decoration: none;
+}
+
+.navbar .nav_link:hover {
+  text-decoration: underline;
+}
+
+.cart_icon {
+  position: relative;
+}
+
+.cart_count {
+  position: absolute;
+  top: -5px;
+  left: 8px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
