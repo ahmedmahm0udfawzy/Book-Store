@@ -2,7 +2,6 @@ import { createBrowserRouter } from "react-router-dom";
 import Root from "../Root/Root";
 import Erorr from "../../Pages/Error/Erorr";
 import Home from "../../Pages/Home/Home";
-import Contact from "../../Pages/Contact/Contact";
 import Cart from "../../Pages/Cart/Cart";
 import Library from "../../Pages/Library/Library";
 import AllCateories from "../../Context/AllCateories";
@@ -48,10 +47,6 @@ const router = createBrowserRouter([
       {
         path: "/wishlist",
         element: <Wishlist />,
-      },
-      {
-        path: "/contact",
-        element: <Contact />,
       },
       {
         path: "/cart",

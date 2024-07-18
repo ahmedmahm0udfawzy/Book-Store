@@ -12,7 +12,11 @@ export default function Footer() {
           <Row>
             <div className="col-lg-3 col-md-6 col-sm-12">
               <div className="logo_footer">
-                <img src="/logo.png" alt="Logo" className="w-100" />
+                <img
+                  src="../../../public/logo.png"
+                  alt="Logo"
+                  className="w-100"
+                />
               </div>
               <div className="my-4">
                 <p className="text-light">

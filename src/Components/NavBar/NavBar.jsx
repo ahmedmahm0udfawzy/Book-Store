@@ -30,9 +30,13 @@ export default function NavBar() {
             <NavLink to="/wishlist" className=" text-dark fs-6 nav_link">
               Favorite
             </NavLink>
-            <NavLink to="/contact" className=" text-dark fs-6 nav_link">
-              Contact
-            </NavLink>
+            {auth ? (
+              <NavLink to="/orders" className=" text-dark fs-6 nav_link">
+                Orders
+              </NavLink>
+            ) : (
+              ""
+            )}
           </Nav>
           <div className="d-flex gap-3 ms-auto align-items-center">
             <NavLink

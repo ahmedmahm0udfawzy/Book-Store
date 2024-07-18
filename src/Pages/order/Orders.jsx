@@ -1,9 +1,17 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ordersContext } from "../../Context/Orders";
 import { Container } from "react-bootstrap";
 
 export default function Orders() {
   const { orders } = useContext(ordersContext);
+  const [selectedBook, setSelectedBook] = useState(null);
+
+  function showAllOrders(items) {
+    if (items.length > 0) {
+      setSelectedBook(items[0].book);
+    }
+  }
+
   return (
     <div>
       <Container>
@@ -16,51 +24,40 @@ export default function Orders() {
                     <th>Name</th>
                     <th>Phone</th>
                     <th>Address</th>
+                    <th>Show Orders</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="text-center">
+                  <tr className="text-center border border-primary">
                     <td>{order.customerName}</td>
                     <td>{order.customerPhone}</td>
                     <td>{order.customerAddress}</td>
+                    <td>
+                      <button
+                        className="btn btn-secondary my-2"
+                        onClick={() => showAllOrders(order.items)}
+                      >
+                        Show Orders
+                      </button>
+                    </td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
         ))}
+        {selectedBook && (
+          <div>
+            <h5>Order</h5>
+            <div>
+              <img src={selectedBook.image} alt="" />
+              <p>{selectedBook.title}</p>
+              <p>{selectedBook.price}</p>
+              <p>{selectedBook.category}</p>
+            </div>
+          </div>
+        )}
       </Container>
     </div>
   );
 }
-
-/*
-      <h1 className="mx-auto" style={{ width: "fit-content", color: "red" }}>
-        Orders
-      </h1>
-      <table className="border rounded p-2 w-100 my-5">
-        <thead>
-          <tr className="border text-center">
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>View</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr className="border text-center">
-            <th>Ahmed Fawzy</th>
-            <th>afaw@eraasoft.com</th>
-            <th>01112204836</th>
-            <th>View</th>
-          </tr>
-        </tbody>
-      </table>
-         <tr>
-                  <th>{order.customerName}</th>
-                  <th>{order.customerPhone}</th>
-                  <th>{order.customerAddress}</th>
-                  <th>{order.discountValue}</th>
-                  <th>{order.totalPrice}</th>
-                </tr>
-*/
