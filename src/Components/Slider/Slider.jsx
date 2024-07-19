@@ -15,13 +15,13 @@ export default function Slider() {
       navigation
     >
       <SwiperSlide>
-        <img src="../../../public/sliderone.jpg" className="w-100 object-fit-cover"/>
+        <img src="/sliderone.jpg" className="w-100 object-fit-cover" />
       </SwiperSlide>
       <SwiperSlide>
-        <img src="../../../public/slidertwo.jpg" className="w-100 object-fit-cover"/>
+        <img src="/slidertwo.jpg" className="w-100 object-fit-cover" />
       </SwiperSlide>
       <SwiperSlide>
-        <img src="../../../public/sliderthree.jpg"className="w-100 object-fit-cover" />
+        <img src="/sliderthree.jpg" className="w-100 object-fit-cover" />
       </SwiperSlide>
     </Swiper>
   );

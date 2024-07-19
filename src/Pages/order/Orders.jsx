@@ -50,7 +50,7 @@ export default function Orders() {
           <div>
             <h5>Order</h5>
             <div>
-              <img src={selectedBook.image} alt="" />
+              <img src={selectedBook.image} alt="Image book" />
               <p>{selectedBook.title}</p>
               <p>{selectedBook.price}</p>
               <p>{selectedBook.category}</p>
