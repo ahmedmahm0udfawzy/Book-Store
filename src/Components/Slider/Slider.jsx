@@ -18,10 +18,10 @@ export default function Slider() {
         <img src="/sliderone.jpg" className="w-100 object-fit-cover" />
       </SwiperSlide>
       <SwiperSlide>
-        <img src="/slidertwo.jpg" className="w-100 object-fit-cover" />
+        <img src="/sliderTwo.jpg" className="w-100 object-fit-cover" />
       </SwiperSlide>
       <SwiperSlide>
-        <img src="/sliderthree.jpg" className="w-100 object-fit-cover" />
+        <img src="/Sliderthree.jpg" className="w-100 object-fit-cover" />
       </SwiperSlide>
     </Swiper>
   );
