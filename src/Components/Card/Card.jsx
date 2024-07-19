@@ -7,6 +7,7 @@ import { BooksContext } from "../../Context/AllBooksContext";
 import { Link } from "react-router-dom";
 
 import AddFavoriteBtn from "../AddFavoriteBtn/AddFavoriteBtn";
+import AddCartBtn from "../AddCartBtn/AddCartBtn";
 
 export default function CardComponent() {
   const { books } = useContext(BooksContext);
@@ -19,9 +20,7 @@ export default function CardComponent() {
         <div className="col-lg-3 col-md-6 col-sm-12" key={index}>
           <Card className="p-3 card">
             <div className="icons_card rounded">
-              <Button className="btn_card">
-                <FaCartShopping className="fs-5 fw-bold text-light" />
-              </Button>
+              <AddCartBtn />
               <Link to={`/shop/singleBook/${book.id}`} className="btn_card">
                 <FaEye className="fs-5 fw-bold text-light" />
               </Link>

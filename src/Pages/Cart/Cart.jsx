@@ -10,7 +10,7 @@ import CheckoutForm from "../../Components/Ckeckout/CheckoutForm";
 
 export default function Cart() {
   const { cart, setCart } = useContext(CartContext);
-  console.log(cart);
+
   const { auth } = useContext(AuthContext);
 
   const handleDelete = (cartId) => {
@@ -40,19 +40,19 @@ export default function Cart() {
         },
         {
           headers: {
-            "Content-Type": "multipart/form-data",
+            "Content-Type": "application/json",
             Authorization: `Bearer ${auth}`,
           },
         }
       )
-      .then((response) => {
+      .then((res) => {
         setCart((prevCart) =>
           prevCart.map((item) =>
             item.cartId === cartId
               ? {
                   ...item,
                   qty: newQuantity,
-                  totalPrice: response.data.totalPrice,
+                  totalPrice: res.data.totalPrice,
                 }
               : item
           )

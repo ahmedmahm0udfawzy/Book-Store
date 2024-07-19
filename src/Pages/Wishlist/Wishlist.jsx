@@ -18,23 +18,27 @@ export default function Wishlist() {
   return (
     <div className="container my-5">
       <div className="row g-4">
-        {favorite.map((product) => (
-          <div key={product.book.id} className="col-lg-3 col-md-6 col-sm-12">
-            <div>
-              <Card>
-                <div className="image">
-                  <Card.Img variant="top" src={product.book.image} />
-                </div>
-                <Card.Body>
-                  <Card.Title>{product.book.title}</Card.Title>
-                  <Card.Text className="book_desc">
-                    {product.book.description}
-                  </Card.Text>
-                </Card.Body>
-              </Card>
+        {favorite.length == 0 ? (
+          <h1>No Items</h1>
+        ) : (
+          favorite.map((product) => (
+            <div key={product.book.id} className="col-lg-3 col-md-6 col-sm-12">
+              <div>
+                <Card>
+                  <div className="image">
+                    <Card.Img variant="top" src={product.book.image} />
+                  </div>
+                  <Card.Body>
+                    <Card.Title>{product.book.title}</Card.Title>
+                    <Card.Text className="book_desc">
+                      {product.book.description}
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+        )}
       </div>
     </div>
   );

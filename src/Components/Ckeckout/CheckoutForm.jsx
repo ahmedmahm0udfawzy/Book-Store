@@ -2,10 +2,12 @@ import axios from "axios";
 import { useContext, useRef, useState } from "react";
 import { AuthContext } from "../../Context/AuthContext";
 import { ordersContext } from "../../Context/Orders";
+import { useNavigate } from "react-router-dom";
 
 export default function CheckoutForm() {
   const { auth } = useContext(AuthContext);
-  const { setOrders } = useContext(ordersContext);
+  const { getOrdersData } = useContext(ordersContext);
+  const orderNavigate = useNavigate();
   const name = useRef();
   const email = useRef();
   const phone = useRef();
@@ -47,7 +49,8 @@ export default function CheckoutForm() {
         },
       })
       .then((res) => {
-        setOrders(res.data);
+        getOrdersData();
+        orderNavigate("/orders");
         setErrors({});
       })
       .catch((err) => {
